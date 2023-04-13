@@ -1,0 +1,72 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "dist/assets/animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
+                "atlasURL": "dist/assets/entites/araigne.json",
+                "textureURL": "dist/assets/entites/araigne.png",
+                "type": "atlas",
+                "key": "araigne"
+            },
+            {
+                "atlasURL": "dist/assets/entites/chauve_souris.json",
+                "textureURL": "dist/assets/entites/chauve_souris.png",
+                "type": "atlas",
+                "key": "chauve_souris"
+            },
+            {
+                "url": "dist/assets/coeur.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "coeur"
+            },
+            {
+                "url": "dist/assets/arriere-plans/fond.jpg",
+                "type": "image",
+                "key": "fond"
+            },
+            {
+                "url": "dist/assets/arriere-plans/fond2.png",
+                "type": "image",
+                "key": "fond2"
+            },
+            {
+                "url": "dist/assets/arriere-plans/fond3.png",
+                "type": "image",
+                "key": "fond3"
+            },
+            {
+                "url": "dist/assets/arriere-plans/fond4.jpg",
+                "type": "image",
+                "key": "fond4"
+            },
+            {
+                "atlasURL": "dist/assets/entites/huipat.json",
+                "textureURL": "dist/assets/entites/huipat.png",
+                "type": "atlas",
+                "key": "huipat"
+            },
+            {
+                "atlasURL": "dist/assets/interface-utilisateur/ui.json",
+                "textureURL": "dist/assets/interface-utilisateur/ui.png",
+                "type": "atlas",
+                "key": "ui"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "id": "06a54d9b-0d0a-4632-ad7a-de8b6bafc9db",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Sprite",
+            "id": "6bbabd42-978e-46ce-9807-fdf01d4af1f0",
+            "label": "toile",
+            "useGameObjectName": true,
+            "scope": "NESTED_PREFAB",
+            "components": [],
+            "texture": {
+                "key": "huipat",
+                "frame": "toile.png"
+            },
+            "scaleX": 0.5511987696365707,
+            "scaleY": 0.14119420138560307,
+            "ArcadeComponent.active": true,
+            "body.gravity.y": 400,
+            "pushable": false,
+            "body.width": 150,
+            "body.height": 150
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

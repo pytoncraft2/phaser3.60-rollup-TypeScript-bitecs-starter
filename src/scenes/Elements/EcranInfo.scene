@@ -1,0 +1,102 @@
+{
+    "id": "1f129a30-e7dc-4335-aa9f-c65e2d324b34",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "cedb2f30-522d-4cc0-8dc0-49f089198ca8",
+            "label": "container_1",
+            "components": [],
+            "y": -8,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "a76a383d-c462-4840-8134-59526be41e85",
+                    "label": "fondNoir",
+                    "scope": "CLASS",
+                    "components": [
+                        "ScrollFactor"
+                    ],
+                    "x": 965,
+                    "y": 547,
+                    "scaleX": 15.727055413525404,
+                    "scaleY": 8.592969514268392,
+                    "alpha": 0,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Text",
+                    "id": "97396ca7-fe15-4df5-b8bb-899c7d126cf2",
+                    "label": "texteNiveau",
+                    "scope": "NESTED_PREFAB",
+                    "components": [
+                        "ScrollFactor"
+                    ],
+                    "x": 962,
+                    "y": 555,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "alpha": 0,
+                    "alphaTopLeft": 0,
+                    "alphaTopRight": 0,
+                    "alphaBottomLeft": 0,
+                    "alphaBottomRight": 0,
+                    "text": "Niveau 1",
+                    "fontSize": "46px"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "show",
+            "label": "show",
+            "tooltip": "show modal",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "title",
+            "label": "title",
+            "tooltip": "Titre",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "string"
+            }
+        },
+        {
+            "name": "subtitle",
+            "label": "subtitle",
+            "tooltip": "sous titre",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "string"
+            }
+        }
+    ]
+}

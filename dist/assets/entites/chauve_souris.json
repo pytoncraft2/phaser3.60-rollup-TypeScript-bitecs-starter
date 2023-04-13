@@ -1,0 +1,35 @@
+{
+	"frames": {
+		"chauve_souris.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 399,
+				"h": 244
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 399,
+				"h": 244
+			},
+			"sourceSize": {
+				"w": 399,
+				"h": 244
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 401,
+			"h": 246
+		},
+		"scale": "1"
+	}
+}

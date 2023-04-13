@@ -1,0 +1,272 @@
+{
+    "id": "3875b0c1-4a3a-4be1-bb5c-2187bdd29d63",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "generateAwakeHandler": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "273a4038-0232-427f-b3b5-1e906d8fb1e9",
+            "label": "container_1",
+            "components": [],
+            "ArcadeComponent.active": true,
+            "body.gravity.y": 800,
+            "collideWorldBounds": true,
+            "body.width": 64,
+            "body.height": 64,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "3bfb0fc0-2af1-4af9-be0d-f9a9e1606f96",
+                    "label": "araigne",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "texture": {
+                        "key": "araigne",
+                        "frame": "araigne.png"
+                    },
+                    "x": 116,
+                    "y": 42,
+                    "flipX": true
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "f3c8797b-13dc-4507-8b58-95494f788aac",
+                    "label": "detecteur_remplie",
+                    "useGameObjectName": true,
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": -21,
+                    "y": 96,
+                    "scaleX": 0.19787767201021347,
+                    "scaleY": 0.23041599334510032,
+                    "ArcadeComponent.active": true,
+                    "moves": false,
+                    "pushable": false,
+                    "body.width": 128,
+                    "body.height": 128,
+                    "fillColor": "#e5f77a",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "d09ce236-bac5-4b14-80a0-371705fcec63",
+                    "label": "detecteur_saut_platforme",
+                    "useGameObjectName": true,
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 3,
+                    "y": -102,
+                    "scaleX": 0.876123929897098,
+                    "scaleY": 0.03743664616352686,
+                    "ArcadeComponent.active": true,
+                    "moves": false,
+                    "pushable": false,
+                    "body.width": 128,
+                    "body.height": 128,
+                    "fillColor": "#04af50",
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "0856eba4-a156-4056-a8d5-3f7997211325",
+                    "label": "toileImage",
+                    "useGameObjectName": true,
+                    "scope": "PUBLIC",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "toile.png"
+                    },
+                    "x": 117,
+                    "y": 46,
+                    "scaleX": 0,
+                    "scaleY": 0
+                }
+            ]
+        }
+    ],
+    "plainObjects": [
+        {
+            "id": "06864c0f-2abd-4392-9514-6b0e9507c473",
+            "type": "Collider",
+            "label": "colision_detecteur_remplie",
+            "object1": "detecteur_remplie",
+            "object2": "(scene as any).platformesLayer?.list as any",
+            "overlapOnly": true,
+            "collideCallback": "this.colisionDetecteurRemplie as any",
+            "callbackContext": "this"
+        },
+        {
+            "id": "781fb90a-f38a-4083-8ab1-620387141c7c",
+            "type": "Collider",
+            "label": "colision_saut_platforme",
+            "object1": "detecteur_saut_platforme",
+            "object2": "(scene as any).platformesLayer?.list as any",
+            "overlapOnly": true,
+            "collideCallback": "this.colisionDetecteurSautPlatforme as any",
+            "callbackContext": "this"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "maxStackBlocked",
+            "label": "maxStackBlocked",
+            "tooltip": "maxStackBlocked",
+            "defValue": 7,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "hitStack",
+            "label": "hitStack",
+            "tooltip": "hitStack",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "canShoot",
+            "label": "canShoot",
+            "tooltip": "canShoot",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "refCanShoot",
+            "label": "refCanShoot",
+            "tooltip": "refCanShoot",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "AraignePrefab"
+            }
+        },
+        {
+            "name": "isOnPlatform",
+            "label": "isOnPlatform",
+            "tooltip": "isOnPlatform",
+            "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "platformeEnHaut",
+            "label": "platformeEnHaut",
+            "tooltip": "platformeEnHaut",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "vitesse",
+            "label": "vitesse",
+            "tooltip": "vitesse",
+            "defValue": 300,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "directionSautHaut",
+            "label": "directionSautHaut",
+            "tooltip": "directionSautHaut",
+            "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "canChangePlatforme",
+            "label": "canChangePlatforme",
+            "tooltip": "canChangePlatforme",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "degat",
+            "label": "degat",
+            "tooltip": "degat",
+            "defValue": 1,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "timerDiminutionToile",
+            "label": "timerDiminutionToile",
+            "tooltip": "timerDiminutionToile",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "expression",
+                "expressionType": "Phaser.Time.TimerEvent"
+            }
+        },
+        {
+            "name": "killable",
+            "label": "killable",
+            "tooltip": "killable",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "canAttack",
+            "label": "canAttack",
+            "tooltip": "canAttack",
+            "defValue": true,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "sceneQuandActif",
+            "label": "sceneQuandActif",
+            "tooltip": "scene quand araigne peut commencer à bouger",
+            "defValue": 1,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

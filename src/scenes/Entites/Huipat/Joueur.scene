@@ -1,0 +1,133 @@
+{
+    "id": "f1d2dfef-c050-4e60-9896-bcfcb8b7591d",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "fa12138a-bfdc-446c-8a26-dbea916b00b9",
+            "label": "container_1",
+            "components": [],
+            "x": 11,
+            "allowAppendChildren": true,
+            "ArcadeComponent.active": true,
+            "body.gravity.y": 1000,
+            "collideWorldBounds": true,
+            "body.width": 265.3460145117081,
+            "body.height": 167.25823690554205,
+            "body.offset.x": 17,
+            "body.offset.y": 12.370881547228977,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "c1055e26-dadf-40fa-8ab6-39a0e06c27cc",
+                    "label": "huipat",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "texture": {
+                        "key": "huipat",
+                        "frame": "huipat.png"
+                    },
+                    "x": 91,
+                    "y": 96
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "60bcfd71-ade7-4786-b633-a2b11b82b44c",
+                    "label": "zone_attaque_physique",
+                    "scope": "NESTED_PREFAB",
+                    "components": [],
+                    "x": 235,
+                    "y": 96,
+                    "scaleX": 0.7397814767454395,
+                    "scaleY": 1.3067049758245473,
+                    "ArcadeComponent.active": true,
+                    "allowGravity": false,
+                    "body.width": 128,
+                    "body.height": 128,
+                    "fillColor": "#ea0000",
+                    "width": 128,
+                    "height": 128
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "canShoot",
+            "label": "canShoot",
+            "tooltip": "canShoot",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "velY",
+            "label": "velY",
+            "tooltip": "velY",
+            "defValue": 890,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "velX",
+            "label": "velX",
+            "tooltip": "velX",
+            "defValue": 350,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "invincible",
+            "label": "invincible",
+            "tooltip": "invincible",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        },
+        {
+            "name": "clone",
+            "label": "clone",
+            "tooltip": "clone",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "killedEnnemy",
+            "label": "killedEnnemy",
+            "tooltip": "killedEnnemy",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}
