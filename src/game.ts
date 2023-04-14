@@ -6,6 +6,13 @@ const config = {
     backgroundColor: '#125555',
     width: 800,
     height: 600,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 1900 },
+            debug: true
+        }
+    },
     scene: Game
 };
 

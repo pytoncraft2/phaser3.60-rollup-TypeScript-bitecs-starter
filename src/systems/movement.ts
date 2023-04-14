@@ -19,7 +19,7 @@ export default function createMovementSystem() {
 			const id = entities[i]
 
 			const direction = Input.direction[id]
-			const speed = Input.speed[id]
+			const speed = 200
 
 			switch (direction)
 			{

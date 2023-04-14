@@ -19,9 +19,10 @@ import CPU from '../components/CPU'
 import Input from '../components/Input'
 
 import createMovementSystem from '../systems/movement'
-import createSpriteSystem from '../systems/sprite'
 import createPlayerSystem from '../systems/player'
 import createCPUSystem from '../systems/cpu'
+import { createArcadeSpriteSystem } from '../systems/sprite'
+import ArcadeSprite from '../components/ArcadeSprite'
 
 enum Textures
 {
@@ -73,6 +74,7 @@ export default class Game extends Phaser.Scene
 			Sprite,
 			Player,
 			Input,
+			ArcadeSprite
 		]
 
 		compList.forEach(comp => {
@@ -106,11 +108,14 @@ export default class Game extends Phaser.Scene
 			Input.speed[tank] = 10
 		}
 
+		const spriteGroup = this.physics.add.group()
+
 		// create the systems
+		this.spriteSystem = createArcadeSpriteSystem(spriteGroup, ['tank-blue', 'tank-green', 'tank-red'])
 		this.playerSystem = createPlayerSystem(this.cursors)
 		this.cpuSystem = createCPUSystem(this)
 		this.movementSystem = createMovementSystem()
-		this.spriteSystem = createSpriteSystem(this, ['tank-blue', 'tank-green', 'tank-red'])
+		// this.spriteSystem = createSpriteSystem(this, ['tank-blue', 'tank-green', 'tank-red'])
     }
 
 	update(t: number, dt: number) {
