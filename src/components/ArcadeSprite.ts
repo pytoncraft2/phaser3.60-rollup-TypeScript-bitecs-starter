@@ -4,4 +4,6 @@ export const ArcadeSprite = defineComponent({
 	texture: Types.ui8
 })
 
-export default ArcadeSprite
+export const ArcadeSpriteStatic = defineComponent({
+	texture: Types.ui8
+})

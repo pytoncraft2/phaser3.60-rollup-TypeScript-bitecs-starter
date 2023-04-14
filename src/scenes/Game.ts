@@ -21,21 +21,23 @@ import Input from '../components/Input'
 import createMovementSystem from '../systems/movement'
 import createPlayerSystem from '../systems/player'
 import createCPUSystem from '../systems/cpu'
-import { createArcadeSpriteSystem } from '../systems/sprite'
-import ArcadeSprite from '../components/ArcadeSprite'
+import { createArcadeSpriteStaticSystem, createArcadeSpriteSystem } from '../systems/sprite'
+import { ArcadeSprite, ArcadeSpriteStatic } from '../components/ArcadeSprite'
 import Alpha from '../components/Alpha'
 
 enum Textures
 {
 	TankBlue = 0,
-	TankGreen = 1,
-	TankRed = 2
+	// TankGreen = 1,
+	// TankRed = 2,
+	Toile = 1
 }
 
 const TextureKeys = [
 	'tank-blue',
-	'tank-green',
-	'tank-red'
+	// 'tank-green',
+	// 'tank-green',
+	'toile'
 ]
 
 export default class Game extends Phaser.Scene
@@ -47,6 +49,7 @@ export default class Game extends Phaser.Scene
 	private cpuSystem!: System
 	private movementSystem!: System
 	private spriteSystem!: System
+	private spriteStaticSystem!: System
 
 	constructor()
 	{
@@ -61,8 +64,9 @@ export default class Game extends Phaser.Scene
 	preload()
     {
         this.load.image(TextureKeys[Textures.TankBlue], 'assets/tank_blue.png')
-		this.load.image(TextureKeys[Textures.TankGreen], 'assets/tank_green.png')
-		this.load.image(TextureKeys[Textures.TankRed], 'assets/tank_red.png')
+		// this.load.image(TextureKeys[Textures.TankGreen], 'assets/tank_green.png')
+		// this.load.image(TextureKeys[Textures.TankRed], 'assets/tank_red.png')
+		this.load.image(TextureKeys[Textures.Toile], 'assets/toile.png')
     }
 
     create()
@@ -88,11 +92,19 @@ export default class Game extends Phaser.Scene
 			addComponent(this.world, comp, blueTank)
 		})
 
-		Position.x[blueTank] = 100
+		Position.x[blueTank] = Phaser.Math.Between(10, 400)
 		Position.y[blueTank] = 100
 		Sprite.texture[blueTank] = Textures.TankBlue
 		Input.speed[blueTank] = 10
 		Alpha.alpha[blueTank] = 1
+
+
+		const toile = addEntity(this.world)
+		addComponent(this.world, Position, toile)
+		addComponent(this.world, ArcadeSpriteStatic, toile)
+		ArcadeSpriteStatic.texture[toile] = Textures.Toile
+		Position.x[toile] = 400
+		Position.y[toile] = 300
 
 		// create random cpu tanks
 		// for (let i = 0; i < 10; ++i)
@@ -117,9 +129,11 @@ export default class Game extends Phaser.Scene
 		// }
 
 		const spriteGroup = this.physics.add.group()
+		const spriteStaticGroup = this.physics.add.staticGroup()
 
 		// create the systems
 		this.spriteSystem = createArcadeSpriteSystem(spriteGroup, ['tank-blue', 'tank-green', 'tank-red'])
+		this.spriteStaticSystem = createArcadeSpriteStaticSystem(spriteStaticGroup, TextureKeys)
 		this.playerSystem = createPlayerSystem(this.cursors)
 		this.cpuSystem = createCPUSystem(this)
 		this.movementSystem = createMovementSystem()
@@ -132,6 +146,7 @@ export default class Game extends Phaser.Scene
 
 		this.movementSystem(this.world)
 
-		this.spriteSystem(this.world)
+		this.spriteStaticSystem?.(this.world)
+		this.spriteSystem?.(this.world)
 	}
 }
