@@ -104,6 +104,13 @@ export default class Game extends Phaser.Scene
 		Position.x[toile] = 400
 		Position.y[toile] = 300
 
+		const autreToile = addEntity(this.world)
+		addComponent(this.world, Position, autreToile)
+		addComponent(this.world, ArcadeSpriteStatic, autreToile)
+		ArcadeSpriteStatic.texture[autreToile] = Textures.Toile
+		Position.x[autreToile] = 600
+		Position.y[autreToile] = 400
+
 		// create random cpu tanks
 		// for (let i = 0; i < 10; ++i)
 		// {
@@ -116,8 +123,8 @@ export default class Game extends Phaser.Scene
 		// 	addComponent(this.world, Velocity, tank)
 		// 	addComponent(this.world, Rotation, tank)
 			
-		// 	addComponent(this.world, Sprite, tank)
-		// 	Sprite.texture[tank] = Phaser.Math.Between(1, 2)
+		// 	addComponent(this.world, ArcadeSprite, tank)
+		// 	ArcadeSprite.texture[tank] = Phaser.Math.Between(1, 2)
 
 		// 	addComponent(this.world, CPU, tank)
 		// 	CPU.timeBetweenActions[tank] = Phaser.Math.Between(0, 500)
