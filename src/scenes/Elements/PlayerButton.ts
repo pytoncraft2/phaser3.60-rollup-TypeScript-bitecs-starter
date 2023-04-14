@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import ScrollFactor from "../../components/ScrollFactor";
 import PlayerController from "../../components/PlayerController";
 /* START-USER-IMPORTS */

@@ -1,17 +1,16 @@
 
 // You can write more code here
-
-/* START OF COMPILED CODE */
-
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import DonnesNiveau from "./Elements/DonnesNiveau";
 import Coeur from "./Elements/Coeur";
 import PlayerButton from "./Elements/PlayerButton";
 import PlatformePrefab from "./Elements/PlatformePrefab";
 import Joueur from "./Entites/Huipat/Joueur";
 import AraignePrefab from "./Entites/Araigne/AraignePrefab";
-/* START-USER-IMPORTS */
-/* END-USER-IMPORTS */
+import { score } from "./Score";
+import { autorun } from "mobx";
+import EcranInfo from "./Elements/EcranInfo";
+/* START OF COMPILED CODE */
 
 export default class Jeu extends Phaser.Scene {
 
@@ -361,22 +360,22 @@ export default class Jeu extends Phaser.Scene {
 
 		const ecran_info = new EcranInfo(this, 0, 0);
 
-		autorun(() => {
-			console.log("AUTORUN!");
+		// autorun(() => {
+			// console.log("AUTORUN!");
 
-			if (score.niveau != 0) {
-				ecran_info.texteNiveau.text = `Niveau ${score.niveau} réussi !`;
-				ecran_info.ouvrir(() => {
-					ecran_info.fermer(() => {
-						this.cameras.main.centerOn(this.liste_fonds_ecran[score.niveau].getCenter().x, this.liste_fonds_ecran[score.niveau].getCenter().y);
-						this.joueur.setPosition(this.liste_fonds_ecran[score.niveau].getCenter().x, this.liste_fonds_ecran[score.niveau].getCenter().y);
-						this.joueur.body.setBoundsRectangle(new Phaser.Geom.Rectangle(this.liste_fonds_ecran[score.niveau].getTopLeft().x, this.liste_fonds_ecran[score.niveau].getTopLeft().y, this.liste_fonds_ecran[score.niveau].width, this.liste_fonds_ecran[score.niveau].height))
-						this.liste_fonds_ecran[score.niveau].sceneActive = true;
-						// this.physics.world.wrap(this.joueur, 190)
-					});
-				});
-			}
-		});
+			// if (score.niveau != 0) {
+			// 	ecran_info.texteNiveau.text = `Niveau ${score.niveau} réussi !`;
+			// 	ecran_info.ouvrir(() => {
+			// 		ecran_info.fermer(() => {
+			// 			this.cameras.main.centerOn(this.liste_fonds_ecran[score.niveau].getCenter().x, this.liste_fonds_ecran[score.niveau].getCenter().y);
+			// 			this.joueur.setPosition(this.liste_fonds_ecran[score.niveau].getCenter().x, this.liste_fonds_ecran[score.niveau].getCenter().y);
+			// 			this.joueur.body.setBoundsRectangle(new Phaser.Geom.Rectangle(this.liste_fonds_ecran[score.niveau].getTopLeft().x, this.liste_fonds_ecran[score.niveau].getTopLeft().y, this.liste_fonds_ecran[score.niveau].width, this.liste_fonds_ecran[score.niveau].height))
+			// 			this.liste_fonds_ecran[score.niveau].sceneActive = true;
+			// 			// this.physics.world.wrap(this.joueur, 190)
+			// 		});
+			// 	});
+			// }
+		// });
 
 		this.scale.startFullscreen();
 		this.input.addPointer(3);

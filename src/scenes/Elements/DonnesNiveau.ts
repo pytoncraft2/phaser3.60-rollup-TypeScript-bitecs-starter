@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import NombreEnnemieAVaincre from "../../components/NombreEnnemieAVaincre";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */

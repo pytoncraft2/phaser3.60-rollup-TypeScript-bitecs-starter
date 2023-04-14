@@ -1,12 +1,7 @@
 
 // You can write more code here
-
+import * as Phaser from "phaser"
 /* START OF COMPILED CODE */
-
-import Phaser from "phaser";
-import PreloadText from "../../components/PreloadText";
-/* START-USER-IMPORTS */
-/* END-USER-IMPORTS */
 
 export default class Prechargment extends Phaser.Scene {
 
@@ -25,9 +20,6 @@ export default class Prechargment extends Phaser.Scene {
 		progress.setOrigin(0.5, 0.5);
 		progress.text = "0%";
 		progress.setStyle({ "color": "#006699", "fontSize": "65px" });
-
-		// progress (components)
-		new PreloadText(progress);
 
 		this.events.emit("scene-awake");
 	}

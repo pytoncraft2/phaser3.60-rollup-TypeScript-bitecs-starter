@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 /* START-USER-IMPORTS */
 import ToileHuipatPrefab from "../../Projectiles/ToileHuipatPrefab";
 import Jeu from "../../Jeu";

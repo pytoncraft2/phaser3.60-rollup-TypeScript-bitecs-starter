@@ -6,7 +6,6 @@
         "snapWidth": 192,
         "snapHeight": 200,
         "exportClass": true,
-        "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "Jeu",

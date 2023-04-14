@@ -1,0 +1,35 @@
+{
+    "components": [
+        {
+            "name": "InteractiveObjet",
+            "baseClass": "",
+            "gameObjectType": "any",
+            "properties": []
+        },
+        {
+            "name": "CommencerSceneAuClique",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "properties": [
+                {
+                    "name": "sceneKey",
+                    "label": "Scene key",
+                    "tooltip": "Clé de la scene à démarrer",
+                    "defValue": "Level1",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "scene-key"
+                    }
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - User Components Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.UserComponents"
+    },
+    "outputLang": "TYPE_SCRIPT",
+    "exportClass": true,
+    "autoImport": true
+}

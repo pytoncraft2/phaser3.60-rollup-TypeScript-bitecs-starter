@@ -3,7 +3,6 @@
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
-        "autoImport": true,
         "preloadMethodName": "editorPreload",
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",

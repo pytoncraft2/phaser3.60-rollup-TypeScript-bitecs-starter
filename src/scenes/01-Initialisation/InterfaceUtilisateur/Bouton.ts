@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import InteractiveObjet from "../../../components/InteractiveObjet";
 import CommencerSceneAuClique from "../../../components/CommencerSceneAuClique";
 /* START-USER-IMPORTS */

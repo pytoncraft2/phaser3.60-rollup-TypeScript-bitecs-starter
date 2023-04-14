@@ -1,13 +1,9 @@
 
 // You can write more code here
-
-/* START OF COMPILED CODE */
-
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import Bouton from "./InterfaceUtilisateur/Bouton";
-import CommencerSceneAuClique from "../../components/CommencerSceneAuClique";
-/* START-USER-IMPORTS */
-/* END-USER-IMPORTS */
+// import CommencerSceneAuClique from "../../components/CommencerSceneAuClique";
+/* START OF COMPILED CODE */
 
 export default class Menu extends Phaser.Scene {
 
@@ -35,18 +31,14 @@ export default class Menu extends Phaser.Scene {
 		rectangle_2.fillColor = 8111652;
 
 		// bouton
-		const bouton = new Bouton(this, 960, 555);
-		this.add.existing(bouton);
+		// const bouton = new Bouton(this, 960, 555);
+		// this.add.existing(bouton);
 
 		// text_1
 		const text_1 = this.add.text(960, 729, "", {});
 		text_1.setOrigin(0.5, 0.5);
 		text_1.text = "Des insectes se sont emparés des matériaux de la tente !\n\nRetrouver les matériaux dans les 10 niveaux.\n\nCertain insectes peuvent vous transmettre de nouvelle capacités une fois vaincu !";
 		text_1.setStyle({ "align": "center", "color": "#7b7b7bff", "fontFamily": "Open Sans", "fontSize": "24px" });
-
-		// bouton (components)
-		const boutonCommencerSceneAuClique = CommencerSceneAuClique.getComponent(bouton);
-		boutonCommencerSceneAuClique.sceneKey = "Jeu";
 
 		this.events.emit("scene-awake");
 	}

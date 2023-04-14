@@ -5,7 +5,6 @@
         "snapWidth": 128,
         "snapHeight": 128,
         "exportClass": true,
-        "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "Menu",
@@ -53,7 +52,6 @@
             ],
             "label": "bouton",
             "components": [],
-            "CommencerSceneAuClique.sceneKey": "Jeu",
             "x": 960,
             "y": 555
         },
