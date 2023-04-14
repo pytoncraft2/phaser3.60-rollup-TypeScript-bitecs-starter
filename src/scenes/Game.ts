@@ -12,7 +12,6 @@ import type {
 
 import Position from '../components/Position'
 import Velocity from '../components/Velocity'
-import Sprite from '../components/Sprite'
 import Rotation from '../components/Rotation'
 import Player from '../components/Player'
 import CPU from '../components/CPU'
@@ -82,7 +81,6 @@ export default class Game extends Phaser.Scene
 			Velocity,
 			Rotation,
 			Alpha,
-			Sprite,
 			Player,
 			Input,
 			ArcadeSprite
@@ -94,7 +92,7 @@ export default class Game extends Phaser.Scene
 
 		Position.x[blueTank] = Phaser.Math.Between(10, 400)
 		Position.y[blueTank] = 100
-		Sprite.texture[blueTank] = Textures.TankBlue
+		ArcadeSprite.texture[blueTank] = Textures.TankBlue
 		Input.speed[blueTank] = 10
 		Alpha.alpha[blueTank] = 1
 
@@ -130,6 +128,8 @@ export default class Game extends Phaser.Scene
 
 		const spriteGroup = this.physics.add.group()
 		const spriteStaticGroup = this.physics.add.staticGroup()
+
+		this.physics.add.collider(spriteGroup, spriteStaticGroup)
 
 		// create the systems
 		this.spriteSystem = createArcadeSpriteSystem(spriteGroup, ['tank-blue', 'tank-green', 'tank-red'])

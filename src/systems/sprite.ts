@@ -7,7 +7,6 @@ import {
 } from 'bitecs'
 
 import Position from '../components/Position'
-import Sprite from '../components/Sprite'
 import Rotation from '../components/Rotation'
 import Velocity from '../components/Velocity'
 import { ArcadeSprite, ArcadeSpriteStatic } from '../components/ArcadeSprite'
