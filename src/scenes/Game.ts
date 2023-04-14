@@ -27,10 +27,16 @@ import Alpha from '../components/Alpha'
 
 enum Textures
 {
-	TankBlue,
-	TankGreen,
-	TankRed
+	TankBlue = 0,
+	TankGreen = 1,
+	TankRed = 2
 }
+
+const TextureKeys = [
+	'tank-blue',
+	'tank-green',
+	'tank-red'
+]
 
 export default class Game extends Phaser.Scene
 {
@@ -54,9 +60,9 @@ export default class Game extends Phaser.Scene
 
 	preload()
     {
-        this.load.image('tank-blue', 'assets/tank_blue.png')
-		this.load.image('tank-green', 'assets/tank_green.png')
-		this.load.image('tank-red', 'assets/tank_red.png')
+        this.load.image(TextureKeys[Textures.TankBlue], 'assets/tank_blue.png')
+		this.load.image(TextureKeys[Textures.TankGreen], 'assets/tank_green.png')
+		this.load.image(TextureKeys[Textures.TankRed], 'assets/tank_red.png')
     }
 
     create()
