@@ -47,8 +47,6 @@ export const createArcadeSpriteSystem = (group: Phaser.Physics.Arcade.Group, tex
 				continue
 			}
 
-			console.log(Alpha.alpha[id]);
-			
 			sprite.setVelocity(Velocity.x[id], Velocity.y[id])
 			sprite.angle = Rotation.angle[id]
 			sprite.alpha = Alpha.alpha[id]

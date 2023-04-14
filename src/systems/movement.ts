@@ -54,8 +54,6 @@ export default function createMovementSystem() {
 					break
 
 				case Direction.Space:
-					console.log("SPACE!");
-					
 					Alpha.alpha[id] = 0.5
 					break
 			}
