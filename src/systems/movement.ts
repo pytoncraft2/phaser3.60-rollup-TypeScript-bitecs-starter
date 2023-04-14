@@ -7,9 +7,10 @@ import Position from '../components/Position'
 import Velocity from '../components/Velocity'
 import Rotation from '../components/Rotation'
 import Input, { Direction } from '../components/Input'
+import Alpha from '../components/Alpha'
 
 export default function createMovementSystem() {
-	const movementQuery = defineQuery([Position, Velocity, Input, Rotation])
+	const movementQuery = defineQuery([Position, Velocity, Input, Rotation, Alpha])
 
 	return defineSystem((world) => {
 		const entities = movementQuery(world)
@@ -51,10 +52,14 @@ export default function createMovementSystem() {
 					Velocity.y[id] = speed
 					Rotation.angle[id] = 90
 					break
+
+				case Direction.Space:
+					console.log("SPACE!");
+					
+					Alpha.alpha[id] = 0.5
+					break
 			}
 
-			Position.x[id] += Velocity.x[id]
-			Position.y[id] += Velocity.y[id]
 		}
 	
 		return world

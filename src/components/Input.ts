@@ -11,7 +11,8 @@ export enum Direction
 	Left,
 	Right,
 	Up,
-	Down
+	Down,
+	Space
 }
 
 export default Input

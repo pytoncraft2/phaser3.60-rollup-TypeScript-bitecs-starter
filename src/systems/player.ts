@@ -18,6 +18,7 @@ export default function createPlayerSystem(cursors: Phaser.Types.Input.Keyboard.
 		for (let i = 0; i < entities.length; ++i)
 		{
 			const id = entities[i]
+			
 			if (cursors.left.isDown)
 			{
 				Input.direction[id] = Direction.Left
@@ -33,6 +34,10 @@ export default function createPlayerSystem(cursors: Phaser.Types.Input.Keyboard.
 			else if (cursors.down.isDown)
 			{
 				Input.direction[id] = Direction.Down
+			}
+			else if (cursors.space.isDown)
+			{
+				Input.direction[id] = Direction.Space
 			}
 			else
 			{

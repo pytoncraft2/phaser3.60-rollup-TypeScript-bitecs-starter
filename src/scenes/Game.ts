@@ -23,6 +23,7 @@ import createPlayerSystem from '../systems/player'
 import createCPUSystem from '../systems/cpu'
 import { createArcadeSpriteSystem } from '../systems/sprite'
 import ArcadeSprite from '../components/ArcadeSprite'
+import Alpha from '../components/Alpha'
 
 enum Textures
 {
@@ -74,6 +75,7 @@ export default class Game extends Phaser.Scene
 			Sprite,
 			Player,
 			Input,
+			Alpha,
 			ArcadeSprite
 		]
 
@@ -115,7 +117,6 @@ export default class Game extends Phaser.Scene
 		this.playerSystem = createPlayerSystem(this.cursors)
 		this.cpuSystem = createCPUSystem(this)
 		this.movementSystem = createMovementSystem()
-		// this.spriteSystem = createSpriteSystem(this, ['tank-blue', 'tank-green', 'tank-red'])
     }
 
 	update(t: number, dt: number) {
