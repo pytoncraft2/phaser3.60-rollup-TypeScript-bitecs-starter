@@ -27,15 +27,15 @@ import Alpha from '../components/Alpha'
 enum Textures
 {
 	TankBlue = 0,
-	// TankGreen = 1,
-	// TankRed = 2,
-	Toile = 1
+	TankGreen = 1,
+	TankRed = 2,
+	Toile = 3
 }
 
 const TextureKeys = [
 	'tank-blue',
-	// 'tank-green',
-	// 'tank-green',
+	'tank-green',
+	'tank-red',
 	'toile'
 ]
 
@@ -62,9 +62,11 @@ export default class Game extends Phaser.Scene
 
 	preload()
     {
+		console.log(TextureKeys[Textures.TankBlue], TextureKeys[Textures.TankGreen], TextureKeys[Textures.TankRed], TextureKeys[Textures.Toile]);
+		
         this.load.image(TextureKeys[Textures.TankBlue], 'assets/tank_blue.png')
-		// this.load.image(TextureKeys[Textures.TankGreen], 'assets/tank_green.png')
-		// this.load.image(TextureKeys[Textures.TankRed], 'assets/tank_red.png')
+		this.load.image(TextureKeys[Textures.TankGreen], 'assets/tank_green.png')
+		this.load.image(TextureKeys[Textures.TankRed], 'assets/tank_red.png')
 		this.load.image(TextureKeys[Textures.Toile], 'assets/toile.png')
     }
 
@@ -112,34 +114,35 @@ export default class Game extends Phaser.Scene
 		Position.y[autreToile] = 400
 
 		// create random cpu tanks
-		// for (let i = 0; i < 10; ++i)
-		// {
-		// 	const tank = addEntity(this.world)
+		for (let i = 0; i < 10; ++i)
+		{
+			const tank = addEntity(this.world)
 
-		// 	addComponent(this.world, Position, tank)
-		// 	Position.x[tank] = Phaser.Math.Between(width * 0.25, width * 0.75)
-		// 	Position.y[tank] = Phaser.Math.Between(height * 0.25, height * 0.75)
+			addComponent(this.world, Position, tank)
+			Position.x[tank] = Phaser.Math.Between(width * 0.25, width * 0.75)
+			Position.y[tank] = Phaser.Math.Between(height * 0.25, height * 0.75)
 
-		// 	addComponent(this.world, Velocity, tank)
-		// 	addComponent(this.world, Rotation, tank)
+			addComponent(this.world, Velocity, tank)
+			addComponent(this.world, Rotation, tank)
+			addComponent(this.world, ArcadeSprite, tank)
+			ArcadeSprite.texture[tank] = Phaser.Math.Between(1, 2)
+			Alpha.alpha[tank] = 1
 			
-		// 	addComponent(this.world, ArcadeSprite, tank)
-		// 	ArcadeSprite.texture[tank] = Phaser.Math.Between(1, 2)
+			addComponent(this.world, CPU, tank)
+			CPU.timeBetweenActions[tank] = Phaser.Math.Between(0, 500)
 
-		// 	addComponent(this.world, CPU, tank)
-		// 	CPU.timeBetweenActions[tank] = Phaser.Math.Between(0, 500)
-
-		// 	addComponent(this.world, Input, tank)
-		// 	Input.speed[tank] = 10
-		// }
+			addComponent(this.world, Input, tank)
+			Input.speed[tank] = 10
+		}
 
 		const spriteGroup = this.physics.add.group()
 		const spriteStaticGroup = this.physics.add.staticGroup()
 
 		this.physics.add.collider(spriteGroup, spriteStaticGroup)
+		this.physics.add.collider(spriteGroup, spriteGroup)
 
 		// create the systems
-		this.spriteSystem = createArcadeSpriteSystem(spriteGroup, ['tank-blue', 'tank-green', 'tank-red'])
+		this.spriteSystem = createArcadeSpriteSystem(spriteGroup, TextureKeys)
 		this.spriteStaticSystem = createArcadeSpriteStaticSystem(spriteStaticGroup, TextureKeys)
 		this.playerSystem = createPlayerSystem(this.cursors)
 		this.cpuSystem = createCPUSystem(this)

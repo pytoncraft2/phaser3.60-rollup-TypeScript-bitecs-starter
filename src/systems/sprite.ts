@@ -28,7 +28,7 @@ export const createArcadeSpriteSystem = (group: Phaser.Physics.Arcade.Group, tex
 			const id = entitiesEntered[i]
 			const texId = ArcadeSprite.texture[id]
 			const texture = textures[texId]
-
+			
 			const sprite = group.get(Position.x[id], Position.y[id], texture)
 			
 			spritesById.set(id, sprite)
